@@ -406,14 +406,39 @@ article.confirmation-page {
 }
 
 @media print {
-    article.confirmation-page {
-        .confirmation-actions {
-            display: none;
-        }
+.success-icon {
+  display: none !important;
+}
+  /* Hide non-essential UI */
+  header, footer, nav,
+  .confirmation-actions,
+  .next-steps,
+  .important-info {
+    display: none !important;
+  }
 
-        .confirmation-header {
-            background-color: white;
-            border: 2px solid var(--clr-primary);
-        }
-    }
+  /* Clean print look */
+  * { box-shadow: none !important; }
+
+  article.confirmation-page {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ✅ FORCE 2x2 booking grid (match specificity) */
+  article.confirmation-page .booking-details .details-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  article.confirmation-page .booking-details .details-grid .detail-card {
+    padding: 10px !important;
+    break-inside: avoid;
+  }
+
+  /* Prevent passenger cards splitting */
+  article.confirmation-page .passenger-info-card {
+    break-inside: avoid;
+  }
 }

@@ -1,3 +1,31 @@
+/* make the filter bar two columns */
+#filters{
+  display:grid;
+  grid-template-columns: auto auto;
+}
+
+#region-filter{
+  grid-column:1;
+  grid-row:2;
+  justify-self: start;
+}
+label[for="region-filter"] {
+  grid-column:1;
+  grid-row:1;
+  justify-self: start;
+}
+#season-filter{
+  grid-column:2;
+  grid-row:2;
+  justify-self: end;
+}
+
+label[for="season-filter"] {
+  grid-column:2;
+  grid-row:1;
+  justify-self: end;
+}
+
 .routes-grid {
     display: flex;
     flex-direction: column;

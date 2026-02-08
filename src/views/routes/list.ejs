@@ -2,15 +2,16 @@
 <h1><%- title %></h1>
 
 <div id="filters">
-    Search by Region:
-    <select id="region-filter">
+  <label for="region-filter">Search by Region</label>
+  <select id="region-filter">
         <option value="all">All Regions</option>
         <% regions.forEach((region) => { %>
             <option value="<%= region %>" <%= query.region === region ? 'selected' : '' %>><%= region.charAt(0).toUpperCase() + region.slice(1) %></option>
         <% }); %>
     </select>
+  </label>
 
-    Search by Season:
+    <label for="season-filter">Search by Season</label>
     <select id="season-filter">
         <option value="all">Any Season</option>
         <% seasons.forEach((season) => { %>
